@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let randomNumber = parseInt(prompt("Nhap vao so de kiem tra : "));
+    if (prime(randomNumber)) {
+        alert(randomNumber + " la so nguyen to")
+    } else alert(randomNumber + " khong la so nguyen to");
+
+    let primeNumbers = [];
+    for (i = 0; i < 10000; i++) {
+        if (prime(i)) {
+            primeNumbers.push(i)
+        }
+    }
+    document.write(primeNumbers);
+
+
+    function prime(num) {
+        if (num < 2) {
+            return false;
+        }
+        if (num === 2) {
+            return true;
+        }
+        else {
+            for (var i = 2; i <= (num / 2); i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+</script>
+</body>
+</html>
